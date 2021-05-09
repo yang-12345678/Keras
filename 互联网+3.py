@@ -61,6 +61,7 @@ model.add(layers.Flatten())
 model.add(layers.Dense(256, activation='relu'))
 model.add(layers.Dense(256, kernel_regularizer=regularizers.l2(0.001),
                        activation='relu'))
+model.add(layers.Dropout(0.5))
 model.add(layers.Dense(1, activation='sigmoid'))
 
 model.summary()
@@ -113,7 +114,7 @@ history = model.fit_generator(train_generator,
                               validation_steps=50,
                               )
 
-model.save("hulianwang+(sample=2540).h5")
+model.save("hulianwang+(sample=2540&Dropot(0.5)&l2=0.001&256layers.h5")
 
 import matplotlib.pyplot as plt
 
